@@ -5,8 +5,8 @@ This repository holds course materials for the Data Visualization course offered
 ## Repository Structure
 
 ```
-├── [lectures/](lectures/)          # Course lecture materials and slides
-├── [examples/](examples/)          # Worked examples and code samples
+├── lectures/          # Course lecture materials and slides
+├── examples/          # Worked examples and code samples
 └── README.md
 ```
 
