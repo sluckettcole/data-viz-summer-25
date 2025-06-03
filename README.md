@@ -10,7 +10,7 @@ This repository holds course materials for the Data Visualization course offered
 └── README.md
 ```
 
-### HTML to PDF Conversion of Quarto Markdown Presentations
+## HTML to PDF Conversion of Quarto Markdown Presentations
 
 Currently, the only utility is a script to convert the Quarto presentations used in some lectures in this course to PDF.
 
