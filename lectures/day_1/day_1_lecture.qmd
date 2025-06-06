@@ -1,0 +1,393 @@
+---
+title: "Data Visualization: Day 1"
+author: "Erik Westlund"
+date: "2025-06-02"
+date-modified: "`r format(Sys.Date(), '%Y-%m-%d')`"
+execute:
+  echo: false
+  warning: false
+  python: /Users/erikwestlund/code/data-viz-summer-25/venv/bin/python
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+    incremental: false
+    code-fold: true
+    highlight-style: github
+    transition: slide
+    footer: "Graduate Summer Institute of Epidemiology and Biostatistics"
+    logo: "https://www.jhu.edu/assets/themes/shared/src/assets/images/favicons/favicon-96x96.png"
+    self-contained: true
+    css: ../styles.css
+editor:
+  render-on-save: true
+---
+
+# Welcome to Data Visualization
+
+## Housekeeping
+
+::: {.incremental}
+- Who am I?
+- Contact information
+- Course materials
+:::
+
+## Who am I?
+
+- I am a data scientist at the Johns Hopkins Bloomberg School of Public Health
+- I work out of the Johns Hopkins Biostatistics Center in the Department of Biostatistics
+- I was trained in the social sciences and have worked profesionally as a data scientist and software developer for over 10 years
+
+## Contact information
+
+- Email: ewestlund@jhu.edu
+
+## Course materials
+
+- [Course GitHub repository](https://github.com/erikwestlund/data-viz-summer-25): <br>
+  https://github.com/erikwestlund/data-viz-summer-25
+- [CoursePlus Website](https://courseplus.jhu.edu/core/index.cfm/go/course.home/coid/23902/): <br>
+  https://courseplus.jhu.edu/core/index.cfm/<br>go/course.home/coid/23902/
+
+## Course Goals
+
+::: {.incremental}
+- Understanding of core data visualization concepts
+- Develop strong data science & data visualization workflows
+- Learn to produce high-quality data visualizations
+- Learn to communicate effectively with and about data visualizations
+:::
+
+## Course Outline
+
+::: {.incremental}
+- Introduction to data visualization
+- Tooling & worfklow
+- Data preparation
+- Grammar of graphics
+- Making good, honest graphics
+- Dashboards
+:::
+
+# Introduction to Data Visualization
+
+## Edward Tufte: Graphical Excellence is....
+
+::: {.columns}
+::: {.column width="50%"}
+![Edward Tufte](images/tufte.jpg)
+:::
+
+::: {.column width="50%"}
+
+> “Graphical excellence is the well-designed presentation of interesting data—a matter of substance, of statistics, and of design...”
+
+*Edward Tufte, The Visual Display of Quantitative Information, 1983*
+
+:::
+:::
+
+## Dense
+
+::: {.columns}
+::: {.column width="50%"}
+![Edward Tufte](images/tufte.jpg)
+:::
+
+::: {.column width="50%"}
+
+> “It is that which gives to the view the great number of ideas in the shortest time with the least ink in the smallest space...”
+
+*Edward Tufte, The Visual Display of Quantitative Information, 1983*
+
+:::
+:::
+
+## Multivariate
+
+::: {.columns}
+::: {.column width="50%"}
+![Edward Tufte](images/tufte.jpg)
+:::
+
+::: {.column width="50%"}
+
+> “It is nearly always multivariate...”
+
+*Edward Tufte, The Visual Display of Quantitative Information, 1983*
+
+:::
+:::
+
+## Truthful
+
+::: {.columns}
+::: {.column width="50%"}
+![Edward Tufte](images/tufte.jpg)
+:::
+
+::: {.column width="50%"}
+
+> “Graphical excellence requires telling the truth about the data...”
+
+*Edward Tufte, The Visual Display of Quantitative Information, 1983*
+
+:::
+:::
+
+## Exemplar: Napoleon's March
+
+
+![Charles Minard's Napoleon's March](images/minard_napoleon.png)
+
+
+## Achieving Minard's Graphical Excellence
+
+> “[Minard's classic image] can be described and admired, but there are no compositional principles on how to create that one wonder graphic in a million.””
+
+*Edward Tufte, The Visual Display of Quantitative Information, 1983*
+
+## For The Rest of Us 
+
+Instead, Tufte suggests:
+
+::: {.incremental}
+* “[For] more routine, workaday designs"
+* "[Have] a properly chosen format and design”
+* “Use words, numbers, and drawing together”
+* “[D]isplay an accessible complexity of detail” 
+* “Avoid content-free decoration, including chartjunk”
+:::
+
+We will revisit more of Tufte's principles throughout the course.
+
+# Tooling & Workflow
+
+* It is worth investing in learning your tools
+* A good data visualization workflow requires good tooling and workflow
+* Below we will discuss some of the tools we will use in this course and why we use them
+
+## Required Software For This Course
+
+## R
+
+::: {.columns}
+
+::: {.column width="75%"}
+* We will rely mostly on R for this course
+* R can be downloaded from [r-project.org](https://www.r-project.org/)
+:::
+
+::: {.column width="25%"}
+
+![R Logo](images/r.png)
+:::
+
+:::
+
+
+## `ggplot2`
+
+::: {.columns}
+
+::: {.column width="75%"}
+* `ggplot2` is a powerful package for creating data visualizations
+* It is built on the grammar of graphics
+* It is a declarative grammar for data visualization
+:::
+
+::: {.column width="25%"}
+![ggplot2 Logo](images/ggplot2.png)
+:::
+
+:::
+
+## git
+
+::: {.columns}
+
+::: {.column width="75%"}
+* `git` is a powerful tool for version control
+* It allows you to 
+  * track changes to your code
+  * revert to previous versions of your code
+  * collaborate with others on your code
+  * maintain multiple branches/versions of your code
+  * and more
+:::
+
+::: {.column width="25%"}
+![git Logo](images/git.png)
+:::
+
+:::
+
+## GitHub
+
+::: {.columns}
+
+::: {.column width="75%"}
+* `git` is not GitHub
+* GitHub is a web-based platform for hosting and collaborating on code
+* It is technically a remote repository for `git`
+* It gives you a place to store your code and collaborate with others
+* It is free for open source projects
+:::
+
+::: {.column width="25%"}
+![GitHub Logo](images/github.png)
+:::
+
+:::
+
+## Scientific Notebooks
+
+::: {.columns}
+
+::: {.column width="75%"}
+* Notebooks are a powerful way to work with data and do data visualization
+* They allow you to embed code, text, and visualizations in a single document
+* They thus allow you to easily share both the process and the results of your work
+* I do not require a specific notebook system for this course, but I will be using Quarto for examples
+:::
+
+::: {.column width="25%"}
+![Notebook Logo](images/lab-notebook.jpg)
+:::
+
+:::
+
+## Notebooks: Quarto
+
+::: {.columns}
+
+::: {.column width="75%"}
+* Quarto is an open source scientific and technical publishing system
+* You can create reports, websites, presentations, and books with Quarto
+* This presentation is built with Quarto
+* You can embed Python, R, and other code in your Quarto documents
+* Quarto renders down to a document in HTML, PDF, or Word format; the files them selves are plain text
+* Easy to store notebooks in version control with `git`
+:::
+
+::: {.column width="25%"}
+![Quarto Logo](images/quarto.png)
+:::
+
+:::
+
+## RMarkdown
+
+::: {.columns}
+
+::: {.column width="75%"}
+* RMarkdown is a way to create documents that mix R code and text
+* It integrates with RStudio well and has a very similar workflow to Quarto
+* RMarkdown renders down to a document in HTML, PDF, or Word format; the files them selves are plain text
+* Easy to store notebooks in version control with git
+:::
+
+::: {.column width="25%"}
+![RMarkdown Logo](images/rmarkdown.png)
+:::
+
+:::
+
+## Jupyter 
+
+::: {.columns}
+
+::: {.column width="75%"}
+* Jupyter is a notebook system popular with Python users
+* Jupyter stores code and results in the same document (Quarto/RMarkdown render into a separate document)
+* Jupyter supports R and other languages
+* Jupyter stores itself as JSON (javascript object notation) files and are not as easy to diff in git
+:::
+
+::: {.column width="25%"}
+![Jupyter Logo](images/jupyter.png)
+:::
+
+:::
+
+
+## Optional/Popular Software
+
+
+## RStudio
+
+::: {.columns}
+
+::: {.column width="75%"}
+* RStudio is a powerful IDE for R
+* It is free and open source
+* It helps you understand what is in your environment (e.g., variables, functions, packages, etc.)
+* It also makes it easy to view your visualizations as you make them
+:::
+
+::: {.column width="25%"}
+![RStudio Logo](images/rstudio.png)
+:::
+
+:::
+
+## Python
+
+::: {.columns}
+
+::: {.column width="75%"}
+* Python is a powerful general purpose programming language
+* It is very popular in the data science community, especially in machine learning
+:::
+
+::: {.column width="25%"}
+![Python Logo](images/python.png)
+:::
+
+:::
+
+## LLMs
+
+::: {.columns}
+
+::: {.column width="75%"}
+* LLMs are commonly used to help with code
+* Common ones used in data science are ChatGPT, Claude, Gemini, and GitHub's Copilot
+* They can help you write code, debug code, and write documentation
+* They can also make mistakes, so you cannot blindly trust their work
+:::
+
+::: {.column width="25%"}
+![GitHub Copilot Logo](images/copilot.png)
+:::
+
+:::
+
+# AI, LLMs, and Data Visualization
+
+## AI and Data Visualization
+
+* AI and LLMs are becoming more and more powerful
+* They can help you with many data-related tasks, but require care
+* They are allowed in this course, but you are responsible for checking their work
+* Data visualization is a scientific area where, to an extent, if things "look right" they are probably right
+
+## My Philosophy
+
+* I use LLMs in nearly all aspects of my work
+* I have foound that there is now less value in being able to "make computer do something" and more in high level concepts
+* To that extent, in this course we will try to focus a little more on concepts and less on `ggplot2` syntax, since LLMs really can mostly solve technical visualization problems
+* Let's try it out.
+
+
+## Python test
+
+```{python}
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+2 + 2
+
+```
