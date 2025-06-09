@@ -599,7 +599,7 @@ data/
 * `.Rhistory`: Command history
 * `.RData`: R workspace files
 
-## Creating Your First Notebook (1/2)
+## Creating Your First Notebook (1/4)
 
 In RStudio:
 
@@ -612,7 +612,7 @@ In RStudio:
   * Click "Create"
   * Save as `example_data_prep.qmd` in your `work/` directory
 
-## Notebook Setup (2/3)
+## Notebook Setup (2/4)
 
 In RStudio:
 
@@ -628,7 +628,7 @@ format: html
 ---
 ```
 
-## Data Preparation
+## Data Preparation (3/4)
 
 Let's create the data preparation setup file.
 
@@ -666,7 +666,7 @@ write_csv(mtcars_clean, "data/mtcars_clean.csv")
   1. A rendered HTML file
   2. A data file stored in the `data/` directory
 
-## Creating Analysis Notebook (3/3)
+## Create an Analysis Notebook (1/23)
 
 In RStudio:
 
@@ -679,7 +679,7 @@ In RStudio:
   * Click "Create"
   * Save as `example_analysis.qmd` in your `work/` directory
 
-## Data Analysis
+## Set Up the Analysis Notebook (2/2)
 
 ```{=html}
 <pre><code class="language-r">```{r setup-analysis}

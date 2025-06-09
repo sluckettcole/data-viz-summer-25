@@ -336,25 +336,25 @@
     "text": "Our .gitignore Setup\n# Data directory\ndata/\n\n# R specific\n.Rproj.user\n.Rhistory\n.RData\n\ndata/: Keeps all data files local\n.Rproj.user: RStudio temporary files\n.Rhistory: Command history\n.RData: R workspace files"
   },
   {
-    "objectID": "day_1/day_1_lecture.html#creating-your-first-notebook-12",
-    "href": "day_1/day_1_lecture.html#creating-your-first-notebook-12",
+    "objectID": "day_1/day_1_lecture.html#creating-your-first-notebook-14",
+    "href": "day_1/day_1_lecture.html#creating-your-first-notebook-14",
     "title": "Data Visualization: Day 1",
-    "section": "Creating Your First Notebook (1/2)",
-    "text": "Creating Your First Notebook (1/2)\nIn RStudio:\n\nClick File -&gt; New File -&gt; Quarto Document\nIn the dialog:\n\nTitle: “Data Preparation Example”\nAuthor: Your Name\nFormat: HTML\nTemplate: Default\n\nClick “Create”\nSave as example_data_prep.qmd in your work/ directory"
+    "section": "Creating Your First Notebook (1/4)",
+    "text": "Creating Your First Notebook (1/4)\nIn RStudio:\n\nClick File -&gt; New File -&gt; Quarto Document\nIn the dialog:\n\nTitle: “Data Preparation Example”\nAuthor: Your Name\nFormat: HTML\nTemplate: Default\n\nClick “Create”\nSave as example_data_prep.qmd in your work/ directory"
   },
   {
-    "objectID": "day_1/day_1_lecture.html#notebook-setup-23",
-    "href": "day_1/day_1_lecture.html#notebook-setup-23",
+    "objectID": "day_1/day_1_lecture.html#notebook-setup-24",
+    "href": "day_1/day_1_lecture.html#notebook-setup-24",
     "title": "Data Visualization: Day 1",
-    "section": "Notebook Setup (2/3)",
-    "text": "Notebook Setup (2/3)\nIn RStudio:\n\nThe YAML header will be automatically created at the top of your file\nIt will look like this:\n\n---\ntitle: \"Data Preparation Example\"\nauthor: \"Your Name\"\ndate: \"`r format(Sys.Date(), '%Y-%m-%d')`\"\nformat: html\n---"
+    "section": "Notebook Setup (2/4)",
+    "text": "Notebook Setup (2/4)\nIn RStudio:\n\nThe YAML header will be automatically created at the top of your file\nIt will look like this:\n\n---\ntitle: \"Data Preparation Example\"\nauthor: \"Your Name\"\ndate: \"`r format(Sys.Date(), '%Y-%m-%d')`\"\nformat: html\n---"
   },
   {
-    "objectID": "day_1/day_1_lecture.html#data-preparation",
-    "href": "day_1/day_1_lecture.html#data-preparation",
+    "objectID": "day_1/day_1_lecture.html#data-preparation-34",
+    "href": "day_1/day_1_lecture.html#data-preparation-34",
     "title": "Data Visualization: Day 1",
-    "section": "Data Preparation",
-    "text": "Data Preparation\nLet’s create the data preparation setup file.\nInclude this as a setup block:\n```{r setup-prep}\n#| echo: false\nlibrary(dplyr)\nlibrary(readr)\n```\nAnd then this to load and prepare the data:\n```{r load-data}\n# Load and prepare data\nmtcars_clean &lt;- mtcars |&gt;\n  mutate(\n    car_name = rownames(mtcars),\n    efficiency = mpg / wt\n  )\n\n# Save processed data\nwrite_csv(mtcars_clean, \"data/mtcars_clean.csv\")\n```"
+    "section": "Data Preparation (3/4)",
+    "text": "Data Preparation (3/4)\nLet’s create the data preparation setup file.\nInclude this as a setup block:\n```{r setup-prep}\n#| echo: false\nlibrary(dplyr)\nlibrary(readr)\n```\nAnd then this to load and prepare the data:\n```{r load-data}\n# Load and prepare data\nmtcars_clean &lt;- mtcars |&gt;\n  mutate(\n    car_name = rownames(mtcars),\n    efficiency = mpg / wt\n  )\n\n# Save processed data\nwrite_csv(mtcars_clean, \"data/mtcars_clean.csv\")\n```"
   },
   {
     "objectID": "day_1/day_1_lecture.html#render-the-file-44",
@@ -364,18 +364,18 @@
     "text": "Render the File (4/4)\n\nKnit the file to see the results\nWe will get two outputs:\n\nA rendered HTML file\nA data file stored in the data/ directory"
   },
   {
-    "objectID": "day_1/day_1_lecture.html#creating-analysis-notebook-33",
-    "href": "day_1/day_1_lecture.html#creating-analysis-notebook-33",
+    "objectID": "day_1/day_1_lecture.html#create-an-analysis-notebook-123",
+    "href": "day_1/day_1_lecture.html#create-an-analysis-notebook-123",
     "title": "Data Visualization: Day 1",
-    "section": "Creating Analysis Notebook (3/3)",
-    "text": "Creating Analysis Notebook (3/3)\nIn RStudio:\n\nClick File -&gt; New File -&gt; Quarto Document\nIn the dialog:\n\nTitle: “Data Analysis Example”\nAuthor: Your Name\nFormat: HTML\nTemplate: Default\n\nClick “Create”\nSave as example_analysis.qmd in your work/ directory"
+    "section": "Create an Analysis Notebook (1/23)",
+    "text": "Create an Analysis Notebook (1/23)\nIn RStudio:\n\nClick File -&gt; New File -&gt; Quarto Document\nIn the dialog:\n\nTitle: “Data Analysis Example”\nAuthor: Your Name\nFormat: HTML\nTemplate: Default\n\nClick “Create”\nSave as example_analysis.qmd in your work/ directory"
   },
   {
-    "objectID": "day_1/day_1_lecture.html#data-analysis",
-    "href": "day_1/day_1_lecture.html#data-analysis",
+    "objectID": "day_1/day_1_lecture.html#set-up-the-analysis-notebook-22",
+    "href": "day_1/day_1_lecture.html#set-up-the-analysis-notebook-22",
     "title": "Data Visualization: Day 1",
-    "section": "Data Analysis",
-    "text": "Data Analysis\n```{r setup-analysis}\n#| echo: false\nlibrary(dplyr)\nlibrary(ggplot2)\n```\n```{r load-processed}\n# Load processed data\nmtcars_clean &lt;- read_csv(\"data/mtcars_clean.csv\")\n```\nWe’re going to pause here, and make sure we can commit our code to GitHub. We’ll come back later and make a few basic plots."
+    "section": "Set Up the Analysis Notebook (2/2)",
+    "text": "Set Up the Analysis Notebook (2/2)\n```{r setup-analysis}\n#| echo: false\nlibrary(dplyr)\nlibrary(ggplot2)\n```\n```{r load-processed}\n# Load processed data\nmtcars_clean &lt;- read_csv(\"data/mtcars_clean.csv\")\n```\nWe’re going to pause here, and make sure we can commit our code to GitHub. We’ll come back later and make a few basic plots."
   },
   {
     "objectID": "day_1/day_1_lecture.html#version-control-setup-12",
