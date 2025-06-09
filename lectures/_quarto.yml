@@ -1,25 +1,18 @@
-project:
-  type: website
-  preview:
-    watch-inputs: true
-    browser: false
-
 format:
   revealjs:
     theme: simple
-    css: styles.css
     slide-number: true
-    chalkboard: true
-    preview-links: auto
     incremental: false
-    fig-width: 8
-    fig-height: 5
-
+    code-fold: true
+    highlight-style: github
+    transition: slide
+    footer: "Graduate Summer Institute of Epidemiology and Biostatistics"
+    logo: "https://www.jhu.edu/assets/themes/shared/src/assets/images/favicons/favicon-96x96.png"
+    self-contained: true
+    css: ../styles.css
 execute:
-  echo: true
+  echo: false
   warning: false
-  engine: knitr
-  freeze: auto
 
 editor:
   render-on-save: true 

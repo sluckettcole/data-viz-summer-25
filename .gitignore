@@ -3,6 +3,7 @@ scratch*
 !scratch/.gitkeep
 
 work/data/*
+!work/data/.gitkeep
 
 # Quarto
 .quarto/
@@ -19,6 +20,10 @@ work/data/*
 .Rprofile
 
 # Ignore RStudio junk
+work/.Rproj.user/
+work/.Rhistory
+work/.RData
+
 lectures/.Rproj.user/
 lectures/.Rhistory
 lectures/.RData

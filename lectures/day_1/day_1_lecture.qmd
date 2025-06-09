@@ -542,7 +542,7 @@ read_csv(here("data", "file.csv"))
 1. Create new project in `work/` using RStudio (File -> New Project -> Existing Directory)
 2. Select the "work" directory in the repository we just forked
 
-I have tested this and RStudio appears to be able to handle the remote repository in the directory one higher up.
+I have tested this and RStudio handles the remote repository in the directory one higher up.
 
 
 ## Your Work Directory
@@ -609,20 +609,21 @@ We are now going to create a file called `.gitignore` to tell git to ignore cert
 
 ## Our `.gitignore` Setup
 
-```
-# Data directory
-data/
+With the course-wide .gitiginore repository file, you will see these lines:
 
-# R specific
-.Rproj.user
-.Rhistory
-.RData
+```
+work/data/*
+
+
+work/.Rproj.user/
+work/.Rhistory
+work/.RData
 ```
 
-* `data/`: Keeps all data files local
-* `.Rproj.user`: RStudio temporary files
-* `.Rhistory`: Command history
-* `.RData`: R workspace files
+* `work/data/*`: Keeps all data files in the work directory local
+* `work/.Rproj.user`: RStudio temporary files
+* `work/.Rhistory`: Command history
+* `work/.RData`: R workspace files
 
 ## Creating Your First Notebook (1/4)
 
@@ -635,7 +636,7 @@ In RStudio:
     - Format: HTML
     - Template: Default
   * Click "Create"
-  * Save as `example_data_prep.qmd` in your `work/` directory
+  * Save as `example_cars_1_data_prep.qmd` in your `work/` directory
 
 ## Notebook Setup (2/4)
 
@@ -647,11 +648,11 @@ In RStudio:
 ```yaml
 ---
 title: "Data Preparation Example"
-author: "Your Name"
-date: "`r format(Sys.Date(), '%Y-%m-%d')`"
 format: html
 ---
 ```
+
+You can remove the `editor: visual` line -- we're going to try to work with text.
 
 ## Data Preparation (3/4)
 
@@ -662,8 +663,11 @@ Include this as a setup block:
 ```{=html}
 <pre><code class="language-r">```{r setup-prep}
 #| echo: false
+#| message: false
 library(dplyr)
 library(readr)
+library(stringr)
+library(ggplot2)
 ```</code></pre>
 ```
 
@@ -675,6 +679,8 @@ And then this to load and prepare the data:
 mtcars_clean <- mtcars |>
   mutate(
     car_name = rownames(mtcars),
+    make = word(car_name, 1),  # First word is make
+    model = str_remove(car_name, paste0(make, " ")),  # Rest is model
     efficiency = mpg / wt
   )
 
@@ -683,15 +689,36 @@ write_csv(mtcars_clean, "data/mtcars_clean.csv")
 ```</code></pre>
 ```
 
+```{r secret-run}
+#| echo: false
+#| message: false
+
+library(dplyr)
+library(readr)
+library(stringr)
+library(ggplot2)
+library(forcats)
+
+mtcars_clean <- mtcars |>
+  mutate(
+    car_name = rownames(mtcars),
+    make = word(car_name, 1),  # First word is brand
+    model = str_remove(car_name, paste0(make, " ")),  # Rest is model
+    efficiency = mpg / wt
+  )
+
+df <- mtcars_clean
+```
+
 ## Render the File (4/4)
 
-* Knit the file to see the results
+* Render the file to see the results (click the "Render" button above the editor)
 * We will get two outputs:
 
   1. A rendered HTML file
   2. A data file stored in the `data/` directory
 
-## Create an Analysis Notebook (1/23)
+## Create an Analysis Notebook (1/2)
 
 In RStudio:
 
@@ -702,36 +729,42 @@ In RStudio:
     - Format: HTML
     - Template: Default
   * Click "Create"
-  * Save as `example_analysis.qmd` in your `work/` directory
+  * Save as `example_cars_2_analysis.qmd` in your `work/` directory
 
 ## Set Up the Analysis Notebook (2/2)
 
 ```{=html}
 <pre><code class="language-r">```{r setup-analysis}
 #| echo: false
+#| message: false
 library(dplyr)
+library(readr)
 library(ggplot2)
+library(forcats)
 ```</code></pre>
 ```
 
 ```{=html}
 <pre><code class="language-r">```{r load-processed}
 # Load processed data
-mtcars_clean <- read_csv("data/mtcars_clean.csv")
+df <- read_csv("data/mtcars_clean.csv")
+df |> head()
 ```</code></pre>
 ```
 
-We're going to pause here, and make sure we can commit our code to GitHub. We'll come back later and make a few basic plots.
 
-## Version Control Setup (1/2)
+## Version Control -- Save our Work (1/2)
 
-You should already have:
+You have:
+
 1. Forked the course repository from GitHub
 2. Cloned your fork to your local machine
 
-Now, let's set up version control in your project. Choose your preferred method:
+Now, let's set up version control in your project.
 
-### Option A: Using RStudio's Git Interface
+
+## Option 1: Using RStudio's Git Interface
+
 1. In RStudio, go to Tools → Version Control → Project Setup
 2. Select "Git" as the version control system
 3. Click "Create Repository"
@@ -741,7 +774,7 @@ Now, let's set up version control in your project. Choose your preferred method:
    - Click "Commit"
    - Click "Push" to sync with your fork
 
-### Option B: Using Terminal Commands
+## Option 2: Using Terminal Commands
 1. In the terminal:
    ```bash
    git add .
@@ -763,8 +796,202 @@ Now, let's set up version control in your project. Choose your preferred method:
 
 Choose whichever method you're most comfortable with as both accomplish the same thing!
 
-## Next Steps
 
-* Your workspace is ready in `work/`
-* You can pull course updates
-* Your work is version controlled
+## Summarize
+
+* We are now at a point where we have a clean, reproducible workflow
+* We've created a two-step workflow for data preparation and analysis
+* We've committed our code to GitHub
+* This workflow puts you ahead of the curve
+
+## Homework Assignment
+
+* Problem Set 1 is due tomorrow
+* Your job is to create a visualization of data from any data set
+* You shoudl follow the workflow you learned today
+* Give the files sensible names and commit them to GitHub
+* Problems? Email me your answers.
+
+## Visualization Workflow Preview
+
+* Let's create a few very, very simple plots
+* We're not going to get into the details of the code until tomorrow
+* For now, let's just put a couple points on the scoreboard
+
+
+## Code Blocks
+
+From here on out, it's up to you to create the code blocks, such as below:
+
+```{=html}
+<pre><code class="language-r">```{r}
+
+# Code goes here
+
+```</code></pre>
+```
+
+## Bar Chart v1
+
+```{r}
+# Count cars by make
+bar_plot_v1 <- df |>
+  ggplot(aes(x = make)) +
+  geom_bar()
+
+bar_plot_v1
+```
+
+What's wrong with this?
+
+## Possible Bar Chart Improvements
+
+* coord_flip(): Flip the x and y axes
+* theme_minimal(): Use a minimal theme
+* labs(): Add labels to the plot
+
+```{r}
+bar_plot_v2 <- df |>
+  ggplot(aes(x = make)) +
+  geom_bar() +
+  coord_flip() +
+  theme_minimal() +
+  labs(
+    title = "Number of Cars by Make",
+    x = "Make",
+    y = "Count"
+  )
+```
+
+## Bar Chart v2
+
+```{r}
+bar_plot_v2
+```
+
+## Possible Bar Chart v2 Improvements
+
+* Sort by count 
+
+```{r}
+bar_plot_v3 <- df |>
+  count(make) |>
+  mutate(make = fct_reorder(make, n)) |>
+  ggplot(aes(x = make, y = n)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  theme_minimal() +
+  labs(
+    title = "Number of Cars by Make",
+    x = "Make",
+    y = "Count"
+  )
+```
+
+## Bar Chart v3
+
+```{r}
+bar_plot_v3
+```
+
+## Bar Chart v3 Improvements
+
+* The title is not very informative
+* We don't need Y axis labels
+* Remove the horizontal lines
+* We can annotate the plot with the number of cars and remove the vertical lines
+
+```{r}
+bar_plot_v4 <- bar_plot_v3 +
+  labs(
+    title = "Distribution of Car Makes in the mtcars Dataset",
+    x = NULL, # Note that because of coord_flip(), x is now the y axis
+    y = "Number of Cars in Fleet"
+  ) +
+  theme(panel.grid.major.x = element_blank())
+```
+
+## Bar Chart v4
+
+```{r}
+bar_plot_v4
+```
+
+## Bar Chart Thoughts
+
+* We see the workflow of building good visualizations with ggplot2
+* We also see that this figure is still not perfect. We could consider:
+  - Making it colorful
+  - Making the title **bold**
+  - Adding a subtitle
+  - Using text annotations
+
+
+## Scatterplot v1
+
+```{r}
+scatter_plot <- df |>
+  ggplot(aes(x = wt, y = mpg)) +
+  geom_point()
+
+scatter_plot
+```
+
+## Scatterplot Improvements
+
+* We can add a trend line
+* We could soften up the gray background
+* We could add a title and labels
+
+## Scatterplot v2
+
+```{r}
+scatter_plot_v2 <- scatter_plot +
+  geom_smooth(method = "lm") + 
+  theme_minimal() + 
+  labs(
+    title = "Relationship between Weight and MPG",
+    x = "Weight (1000 lbs)",
+    y = "MPG"
+  )
+```
+
+## Scatterplot v2
+
+```{r}
+scatter_plot_v2
+```
+
+## Scatterplot thoughts
+
+* This is looking better
+* In a real analysis, we may want to annotate certain points or facet by some other variable
+
+## Fancier Plotting
+
+* If you look at our code set up, we created an `efficiency` variable
+* What if we tried to compare efficiency across makes? How might we proceed?
+
+```{r}
+#| message: false
+efficiency_by_make <- df |>
+  group_by(make) |>
+  summarise(avg_efficiency = mean(efficiency)) |>
+  mutate(make = fct_reorder(make, avg_efficiency)) |>
+  ggplot(aes(x = make, y = avg_efficiency)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  theme_minimal() +
+  theme(panel.grid.major.y = element_blank()) +
+  labs(
+    title = "Average Fuel Efficiency by Make",
+    x = NULL,
+    y = "Average Efficiency (MPG/1000 lbs)"
+  )
+```
+
+## Efficiency By Make Plot
+
+```{r}
+efficiency_by_make
+```

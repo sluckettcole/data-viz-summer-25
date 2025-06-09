@@ -49,47 +49,19 @@ compile_lecture <- function(lecture_file, output_dir) {
     # Change to the directory containing the lecture file
     setwd(path_dir(lecture_file))
     
-    # Create _site directory if it doesn't exist
-    dir_create("../_site", recurse = TRUE)
+    # Render the file using quarto CLI
+    system(sprintf("quarto render %s", path_file(lecture_file)))
     
-    # Render the file
-    quarto_render(
-      path_file(lecture_file),
-      output_format = "html"
-    )
-    
-    # Define source and target paths
-    source_path <- path("..", "_site", day_num, paste0(day_num, "_lecture.html"))
-    target_path <- path(here(output_dir), paste0(day_num, ".html"))
-    
-    # Check if source file exists
-    if (!file_exists(source_path)) {
-      cli_alert_danger("Source file not found at {source_path}")
-      return()
-    }
-    
-    # Copy the file from _site to the final output directory
-    file_copy(
-      source_path,
-      target_path,
-      overwrite = TRUE
-    )
-    
-    # Copy site_libs directory if it exists
-    site_libs_source <- path("..", "_site", "site_libs")
-    site_libs_target <- path(here(output_dir), "site_libs")
-    
-    if (dir_exists(site_libs_source)) {
-      dir_create(site_libs_target, recurse = TRUE)
-      file_copy(
-        site_libs_source,
-        path_dir(site_libs_target),
-        overwrite = TRUE,
-        recursive = TRUE
+    # Move the rendered file to the output directory
+    rendered_file <- paste0(day_num, "_lecture.html")
+    if (file_exists(rendered_file)) {
+      file_move(
+        rendered_file,
+        path(here(output_dir), paste0(day_num, ".html"))
       )
     }
     
-    cli_alert_success("Successfully compiled {lecture_file} to {target_path}")
+    cli_alert_success("Successfully compiled {lecture_file}")
   }, error = function(e) {
     cli_alert_danger("Failed to compile {lecture_file}: {e$message}")
   }, finally = {
