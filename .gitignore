@@ -73,3 +73,29 @@ Thumbs.db
 *.log
 *.tmp
 *.temp
+
+# Data directory
+data/
+
+# Quarto generated files
+_site/
+_freeze/
+*.html
+*.pdf
+*.docx
+*.pptx
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Course specific
+lectures/_site/
+lectures/_freeze/
+lectures/**/_site/
+lectures/**/_freeze/
