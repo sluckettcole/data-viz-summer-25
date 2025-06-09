@@ -2,6 +2,7 @@
 scratch*
 !scratch/.gitkeep
 
+work/data/*
 
 # Quarto
 .quarto/

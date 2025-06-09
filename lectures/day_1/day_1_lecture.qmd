@@ -373,6 +373,17 @@ We will revisit more of Tufte's principles throughout the course.
 
 * GitHub: Create an account at [github.com](https://github.com/)
 
+## Setup Tasks
+
+You may need to configure your git username and email.
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+```
+
+On Windows, you can run this in "Git Bash". On Mac, you can run this in the terminal.
+
 # Project Organization & Tooling
 
 ## Before We Do Actual Visualization
@@ -452,12 +463,12 @@ work/
    └── data/
    ```
 
-## The Challenge of Subfolders
+## The Challenge of Subdirectories
 
 ::: {.callout-warning}
 ## Relative Paths are Tricky!
 
-* Files in subfolders need to reference parent directories
+* Files in subdirectories need to reference parent directories
 * Paths like `../../data/file.csv` are:
   * Error-prone
   * Hard to maintain
@@ -514,7 +525,7 @@ read_csv(here("data", "file.csv"))
 ## Fork/Open the Course Repository
 
 1. Fork the course repo on GitHub
-2. In RStudio: File -> New Project -> Version Control -> Git
+2. In RStudio: File -> New Project -> From Version Control
 3. Paste your fork URL and create
 
 ## Exploring the Example Project
@@ -531,7 +542,7 @@ read_csv(here("data", "file.csv"))
 1. Create new project in `work/` using RStudio (File -> New Project -> Existing Directory)
 2. Select the "work" directory in the repository we just forked
 
-I have tested this and Rstudio appears to be able to handle the remote repository in the directory one higher up.
+I have tested this and RStudio appears to be able to handle the remote repository in the directory one higher up.
 
 
 ## Your Work Directory
@@ -714,33 +725,43 @@ We're going to pause here, and make sure we can commit our code to GitHub. We'll
 
 ## Version Control Setup (1/2)
 
-1. Create new repository on GitHub:
-   - Go to github.com
-   - Click "New repository"
-   - Name it "data-viz-work"
-   - Don't initialize with README
+You should already have:
+1. Forked the course repository from GitHub
+2. Cloned your fork to your local machine
 
-2. In the terminal tab in RStudio, run the following commands:
-   ```bash
-   git remote add origin https://github.com/YOUR-USERNAME/data-viz-work.git
-   git branch -M main
-   ```
+Now, let's set up version control in your project. Choose your preferred method:
 
-## Version Control Setup (2/2)
+### Option A: Using RStudio's Git Interface
+1. In RStudio, go to Tools → Version Control → Project Setup
+2. Select "Git" as the version control system
+3. Click "Create Repository"
+4. In the Git tab (usually in the top-right panel):
+   - Click "Add" to stage all files (or select individual files)
+   - Enter commit message: "Initial project setup"
+   - Click "Commit"
+   - Click "Push" to sync with your fork
 
-3. First commit and push:
+### Option B: Using Terminal Commands
+1. In the terminal:
    ```bash
    git add .
    git commit -m "Initial project setup"
-   git push -u origin main
+   git push
    ```
 
 ## Version Control Workflow
 
-For future changes:
+### Option A: Using RStudio's Git Interface
+1. Stage changes: Click "Add" in the Git tab
+2. Commit: Enter message and click "Commit"
+3. Push: Click "Push" to sync with your fork
+
+### Option B: Using Terminal Commands
 1. Stage changes: `git add .`
 2. Commit: `git commit -m "Description of changes"`
 3. Push: `git push`
+
+Choose whichever method you're most comfortable with as both accomplish the same thing!
 
 ## Next Steps
 
