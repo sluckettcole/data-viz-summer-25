@@ -5,6 +5,10 @@ scratch*
 work/data/*
 !work/data/.gitkeep
 
+# Slides
+!slides/*.html
+!slides/day_1.html
+
 # Quarto
 .quarto/
 *_files/
