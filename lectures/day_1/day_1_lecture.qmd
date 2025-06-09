@@ -528,9 +528,11 @@ read_csv(here("data", "file.csv"))
 
 ## Setting Up Your Work Directory
 
-1. Create new project in `work/` using RStudio (File -> New Project -> New Directory -> New Project)
-2. Name it "data-viz-work"
-3. Enable git repository
+1. Create new project in `work/` using RStudio (File -> New Project -> Existing Directory)
+2. Select the "work" directory in the repository we just forked
+
+I have tested this and Rstudio appears to be able to handle the remote repository in the directory one higher up.
+
 
 ## Your Work Directory
 

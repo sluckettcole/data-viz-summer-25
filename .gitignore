@@ -1,8 +1,7 @@
 # Work
 scratch*
 !scratch/.gitkeep
-work*
-!work/.gitkeep
+
 
 # Quarto
 .quarto/
