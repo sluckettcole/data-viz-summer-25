@@ -3,24 +3,6 @@ title: "Data Visualization: Day 1"
 author: "Erik Westlund"
 date: "2025-06-02"
 date-modified: "`r format(Sys.Date(), '%Y-%m-%d')`"
-execute:
-  echo: false
-  warning: false
-  python: /Users/erikwestlund/code/data-viz-summer-25/venv/bin/python
-format:
-  revealjs:
-    theme: simple
-    slide-number: true
-    incremental: false
-    code-fold: true
-    highlight-style: github
-    transition: slide
-    footer: "Graduate Summer Institute of Epidemiology and Biostatistics"
-    logo: "https://www.jhu.edu/assets/themes/shared/src/assets/images/favicons/favicon-96x96.png"
-    self-contained: true
-    css: ../styles.css
-editor:
-  render-on-save: true
 ---
 
 # Welcome to Data Visualization
@@ -81,7 +63,7 @@ editor:
 
 ::: {.column width="50%"}
 
-> “Graphical excellence is the well-designed presentation of interesting data—a matter of substance, of statistics, and of design...”
+> "Graphical excellence is the well-designed presentation of interesting data—a matter of substance, of statistics, and of design..."
 
 *Edward Tufte, The Visual Display of Quantitative Information, 1983*
 
@@ -97,7 +79,7 @@ editor:
 
 ::: {.column width="50%"}
 
-> “It is that which gives to the view the great number of ideas in the shortest time with the least ink in the smallest space...”
+> "It is that which gives to the view the great number of ideas in the shortest time with the least ink in the smallest space..."
 
 *Edward Tufte, The Visual Display of Quantitative Information, 1983*
 
@@ -113,7 +95,7 @@ editor:
 
 ::: {.column width="50%"}
 
-> “It is nearly always multivariate...”
+> "It is nearly always multivariate..."
 
 *Edward Tufte, The Visual Display of Quantitative Information, 1983*
 
@@ -129,7 +111,7 @@ editor:
 
 ::: {.column width="50%"}
 
-> “Graphical excellence requires telling the truth about the data...”
+> "Graphical excellence requires telling the truth about the data..."
 
 *Edward Tufte, The Visual Display of Quantitative Information, 1983*
 
@@ -144,7 +126,7 @@ editor:
 
 ## Achieving Minard's Graphical Excellence
 
-> “[Minard's classic image] can be described and admired, but there are no compositional principles on how to create that one wonder graphic in a million.””
+> "[Minard's classic image] can be described and admired, but there are no compositional principles on how to create that one wonder graphic in a million.""
 
 *Edward Tufte, The Visual Display of Quantitative Information, 1983*
 
@@ -153,11 +135,11 @@ editor:
 Instead, Tufte suggests:
 
 ::: {.incremental}
-* “[For] more routine, workaday designs"
-* "[Have] a properly chosen format and design”
-* “Use words, numbers, and drawing together”
-* “[D]isplay an accessible complexity of detail” 
-* “Avoid content-free decoration, including chartjunk”
+* "[For] more routine, workaday designs"
+* "[Have] a properly chosen format and design"
+* "Use words, numbers, and drawing together"
+* "[D]isplay an accessible complexity of detail" 
+* "Avoid content-free decoration, including chartjunk"
 :::
 
 We will revisit more of Tufte's principles throughout the course.
@@ -266,9 +248,8 @@ We will revisit more of Tufte's principles throughout the course.
 * Quarto is an open source scientific and technical publishing system
 * You can create reports, websites, presentations, and books with Quarto
 * This presentation is built with Quarto
-* You can embed Python, R, and other code in your Quarto documents
-* Quarto renders down to a document in HTML, PDF, or Word format; the files them selves are plain text
-* Easy to store notebooks in version control with `git`
+* You can embed Python, R, and other code in in plaintext Quarto documents
+* Quarto renders down to a document in HTML, PDF, or Word format
 :::
 
 ::: {.column width="25%"}
@@ -337,8 +318,9 @@ We will revisit more of Tufte's principles throughout the course.
 ::: {.columns}
 
 ::: {.column width="75%"}
-* Python is a powerful general purpose programming language
-* It is very popular in the data science community, especially in machine learning
+* Python is a powerful general purpose programming language that is very popular in the data science community, especially in machine learning
+* It has A-tier data management and scientific computing libraries, such as `pandas` and `numpy`
+* It has a large ecosystem of packages for data visualization, including `matplotlib` and `seaborn`
 :::
 
 ::: {.column width="25%"}
@@ -371,23 +353,383 @@ We will revisit more of Tufte's principles throughout the course.
 * AI and LLMs are becoming more and more powerful
 * They can help you with many data-related tasks, but require care
 * They are allowed in this course, but you are responsible for checking their work
-* Data visualization is a scientific area where, to an extent, if things "look right" they are probably right
 
 ## My Philosophy
 
 * I use LLMs in nearly all aspects of my work
-* I have foound that there is now less value in being able to "make computer do something" and more in high level concepts
+* I have found that there is now less value in being able to "make computer do something" and more in high level concepts
 * To that extent, in this course we will try to focus a little more on concepts and less on `ggplot2` syntax, since LLMs really can mostly solve technical visualization problems
-* Let's try it out.
 
 
-## Python test
+# Project Organization & Tooling
 
-```{python}
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
+## Before We Do Actual Visualization
 
-2 + 2
+* I am spending a lot of time on tools and organization
+* This may seem off-topic, but I assure you it is not
+* Efficient workflows and reproducible work are key to success in data science
+
+## Benefits Of Being Organized 
+
+* **Efficiency**: Find files quickly
+* **Reproducibility**: Others can follow your work
+* **Collaboration**: Team members understand your structure
+* **Maintenance**: Easier to update and fix issues
+* **Scalability**: Structure grows with your project
+
+## Naming Convention Challenges
+
+* Files need to be:
+  * Easy to find
+  * Easy to understand
+  * Easy to sort
+  * Easy to version control
+
+* Common problems:
+  * Unclear file purposes
+  * Inconsistent naming
+  * Missing execution order
+  * Lost files in nested directories
+  * Confusion about latest versions
+
+## Course Naming Conventions
+
+I recommend these conventions:
 
 ```
+work/
+├── example_*         # Learning examples
+├── ps1_*             # Problem set 1
+├── ps2_*             # Problem set 2
+├── ps3_*             # Problem set 3
+├── final_project_*   # Final project
+├── shared_*          # Shared resources
+└── data/             # Data directory
+```
+
+* Prefixes indicate purpose
+* Numbers show execution order
+* It is a best practice to document your structure in a README
+
+## Real-World Flexibility
+
+* These conventions are a starting point
+* Real projects often need:
+  * Different structures for different teams
+  * Adaptation as projects grow
+  * Balance between consistency and flexibility
+  * Documentation of changes
+
+## Directory Structure Options
+
+1. Flat Structure:
+   ```
+   work/
+   ├── data_prep.qmd
+   ├── analysis.qmd
+   └── data/
+   ```
+
+2. Nested Structure:
+   ```
+   work/
+   ├── data_prep/
+   │   └── data_prep.qmd
+   ├── analysis/
+   │   └── analysis.qmd
+   └── data/
+   ```
+
+## The Challenge of Subfolders
+
+::: {.callout-warning}
+## Relative Paths are Tricky!
+
+* Files in subfolders need to reference parent directories
+* Paths like `../../data/file.csv` are:
+  * Error-prone
+  * Hard to maintain
+  * Break when moving files
+  * Confusing to read
+:::
+
+## The `.Rproj` File
+
+* Defines your project root
+* Sets the working directory
+* Stores project settings
+* Makes paths relative to project root
+* Essential for project portability
+
+## The `here` Package
+
+```r
+library(here)
+
+# Instead of "../../data/file.csv"
+read_csv(here("data", "file.csv"))
+```
+
+* Builds paths from project root
+* Works from any subfolder
+* More readable than `../`
+* More maintainable
+
+## Benefits of Good Path Management
+
+* Paths work from anywhere
+* No more `../` counting
+* More maintainable
+* More portable
+* Easier collaboration
+
+### When to Change Structure?
+
+* As project complexity grows
+* When working with multiple datasets
+* When collaborating with others
+* When sharing code with different audiences
+
+
+# Getting Started with RStudio, Projects, Quarto, and `git`
+
+## Goals
+
+* Learn the data science workflow: RStudio, projects, Quarto, and `git`
+* Set up your course workspace
+* Create your first notebook
+
+## Fork/Open the Course Repository
+
+1. Fork the course repo on GitHub
+2. In RStudio: File -> New Project -> Version Control -> Git
+3. Paste your fork URL and create
+
+## Exploring the Example Project
+
+1. Open `examples/project-example/`
+2. Notice the structure:
+   - `_quarto.yml` for configuration
+   - Numbered notebooks
+   - `data/` directory
+   - `.gitignore`
+
+## Setting Up Your Work Directory
+
+1. Create new project in `work/` using RStudio (File -> New Project -> New Directory -> New Project)
+2. Name it "data-viz-work"
+3. Enable git repository
+
+## Your Work Directory
+
+::: {.callout-note}
+## Important!
+
+The `work/` directory is your personal workspace for **everything** in this course:
+
+* All homework assignments
+* Course projects
+* Learning examples
+* Your final project
+
+**You are responsible for:**
+
+* Keeping your work organized
+* Following the naming conventions
+* Maintaining a clean project structure
+* Documenting your organization in README
+
+This is your space - keep it clean and organized!
+:::
+
+## Configuring Your Project (1/2)
+
+Let's get a file set up to work with Quarto and have data to read from.
+
+1. Copy `example_project_quarto.yml` from `examples` to `_quarto.yml` in your new project
+2. Create `data/` directory
+
+## Configuring Your Project (2/2)
+
+We are now going to create a file called `.gitignore` to tell git to ignore certain files.
+
+1. Create a file called `.gitignore` (if it doesn't already exist)
+
+
+## Understanding `.gitignore`
+
+::: {.callout-warning}
+## Never Commit Sensitive Data!
+
+* `.gitignore` tells Git which files to ignore
+* Critical for:
+  * Protecting sensitive data
+  * Preventing accidental commits
+  * Keeping repositories clean
+:::
+
+## Why `.gitignore` Matters
+
+* **Data Privacy**:
+  * Health data is sensitive
+  * Patient information must be protected
+  * Legal requirements (HIPAA, etc.)
+  * Ethical obligations
+
+* **Repository Health**:
+  * Prevents large binary files
+  * Avoids temporary files
+  * Keeps repository size manageable
+  * Makes collaboration easier
+
+## Our `.gitignore` Setup
+
+```
+# Data directory
+data/
+
+# R specific
+.Rproj.user
+.Rhistory
+.RData
+```
+
+* `data/`: Keeps all data files local
+* `.Rproj.user`: RStudio temporary files
+* `.Rhistory`: Command history
+* `.RData`: R workspace files
+
+## Creating Your First Notebook (1/2)
+
+In RStudio:
+
+  * Click File -> New File -> Quarto Document
+  * In the dialog:
+    - Title: "Data Preparation Example"
+    - Author: Your Name
+    - Format: HTML
+    - Template: Default
+  * Click "Create"
+  * Save as `example_data_prep.qmd` in your `work/` directory
+
+## Notebook Setup (2/3)
+
+In RStudio:
+
+  * The YAML header will be automatically created at the top of your file
+  * It will look like this:
+
+```yaml
+---
+title: "Data Preparation Example"
+author: "Your Name"
+date: "`r format(Sys.Date(), '%Y-%m-%d')`"
+format: html
+---
+```
+
+## Data Preparation
+
+Let's create the data preparation setup file.
+
+Include this as a setup block:
+
+```{=html}
+<pre><code class="language-r">```{r setup-prep}
+#| echo: false
+library(dplyr)
+library(readr)
+```</code></pre>
+```
+
+And then this to load and prepare the data:
+
+```{=html}
+<pre><code class="language-r">```{r load-data}
+# Load and prepare data
+mtcars_clean <- mtcars |>
+  mutate(
+    car_name = rownames(mtcars),
+    efficiency = mpg / wt
+  )
+
+# Save processed data
+write_csv(mtcars_clean, "data/mtcars_clean.csv")
+```</code></pre>
+```
+
+## Render the File (4/4)
+
+* Knit the file to see the results
+* We will get two outputs:
+
+  1. A rendered HTML file
+  2. A data file stored in the `data/` directory
+
+## Creating Analysis Notebook (3/3)
+
+In RStudio:
+
+  * Click File -> New File -> Quarto Document
+  * In the dialog:
+    - Title: "Data Analysis Example"
+    - Author: Your Name
+    - Format: HTML
+    - Template: Default
+  * Click "Create"
+  * Save as `example_analysis.qmd` in your `work/` directory
+
+## Data Analysis
+
+```{=html}
+<pre><code class="language-r">```{r setup-analysis}
+#| echo: false
+library(dplyr)
+library(ggplot2)
+```</code></pre>
+```
+
+```{=html}
+<pre><code class="language-r">```{r load-processed}
+# Load processed data
+mtcars_clean <- read_csv("data/mtcars_clean.csv")
+```</code></pre>
+```
+
+We're going to pause here, and make sure we can commit our code to GitHub. We'll come back later and make a few basic plots.
+
+## Version Control Setup (1/2)
+
+1. Create new repository on GitHub:
+   - Go to github.com
+   - Click "New repository"
+   - Name it "data-viz-work"
+   - Don't initialize with README
+
+2. In the terminal tab in RStudio, run the following commands:
+   ```bash
+   git remote add origin https://github.com/YOUR-USERNAME/data-viz-work.git
+   git branch -M main
+   ```
+
+## Version Control Setup (2/2)
+
+3. First commit and push:
+   ```bash
+   git add .
+   git commit -m "Initial project setup"
+   git push -u origin main
+   ```
+
+## Version Control Workflow
+
+For future changes:
+1. Stage changes: `git add .`
+2. Commit: `git commit -m "Description of changes"`
+3. Push: `git push`
+
+## Next Steps
+
+* Your workspace is ready in `work/`
+* You can pull course updates
+* Your work is version controlled

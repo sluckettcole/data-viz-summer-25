@@ -1,3 +1,7 @@
+# Work
+scratch*
+!scratch/.gitkeep
+
 # Quarto
 .quarto/
 *_files/
@@ -11,6 +15,14 @@
 .Rapp.history
 .Renviron
 .Rprofile
+
+# Ignore RStudio junk
+work/.Rproj.user/
+work/.Rhistory
+work/.RData
+lectures/.Rproj.user/
+lectures/.Rhistory
+lectures/.RData
 
 # RevealJS
 node_modules/

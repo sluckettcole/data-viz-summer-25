@@ -1,0 +1,408 @@
+[
+  {
+    "objectID": "day_1/day_1_lecture.html#housekeeping",
+    "href": "day_1/day_1_lecture.html#housekeeping",
+    "title": "Data Visualization: Day 1",
+    "section": "Housekeeping",
+    "text": "Housekeeping\n\nWho am I?\nContact information\nCourse materials"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#who-am-i",
+    "href": "day_1/day_1_lecture.html#who-am-i",
+    "title": "Data Visualization: Day 1",
+    "section": "Who am I?",
+    "text": "Who am I?\n\nI am a data scientist at the Johns Hopkins Bloomberg School of Public Health\nI work out of the Johns Hopkins Biostatistics Center in the Department of Biostatistics\nI was trained in the social sciences and have worked profesionally as a data scientist and software developer for over 10 years"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#contact-information",
+    "href": "day_1/day_1_lecture.html#contact-information",
+    "title": "Data Visualization: Day 1",
+    "section": "Contact information",
+    "text": "Contact information\n\nEmail: ewestlund@jhu.edu"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#course-materials",
+    "href": "day_1/day_1_lecture.html#course-materials",
+    "title": "Data Visualization: Day 1",
+    "section": "Course materials",
+    "text": "Course materials\n\nCourse GitHub repository:  https://github.com/erikwestlund/data-viz-summer-25\nCoursePlus Website:  https://courseplus.jhu.edu/core/index.cfm/go/course.home/coid/23902/"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#course-goals",
+    "href": "day_1/day_1_lecture.html#course-goals",
+    "title": "Data Visualization: Day 1",
+    "section": "Course Goals",
+    "text": "Course Goals\n\nUnderstanding of core data visualization concepts\nDevelop strong data science & data visualization workflows\nLearn to produce high-quality data visualizations\nLearn to communicate effectively with and about data visualizations"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#course-outline",
+    "href": "day_1/day_1_lecture.html#course-outline",
+    "title": "Data Visualization: Day 1",
+    "section": "Course Outline",
+    "text": "Course Outline\n\nIntroduction to data visualization\nTooling & worfklow\nData preparation\nGrammar of graphics\nMaking good, honest graphics\nDashboards"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#edward-tufte-graphical-excellence-is.",
+    "href": "day_1/day_1_lecture.html#edward-tufte-graphical-excellence-is.",
+    "title": "Data Visualization: Day 1",
+    "section": "Edward Tufte: Graphical Excellence is….",
+    "text": "Edward Tufte: Graphical Excellence is….\n\n\n\n\n\nEdward Tufte\n\n\n\n\n“Graphical excellence is the well-designed presentation of interesting data—a matter of substance, of statistics, and of design…”\n\nEdward Tufte, The Visual Display of Quantitative Information, 1983"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#dense",
+    "href": "day_1/day_1_lecture.html#dense",
+    "title": "Data Visualization: Day 1",
+    "section": "Dense",
+    "text": "Dense\n\n\n\n\n\nEdward Tufte\n\n\n\n\n“It is that which gives to the view the great number of ideas in the shortest time with the least ink in the smallest space…”\n\nEdward Tufte, The Visual Display of Quantitative Information, 1983"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#multivariate",
+    "href": "day_1/day_1_lecture.html#multivariate",
+    "title": "Data Visualization: Day 1",
+    "section": "Multivariate",
+    "text": "Multivariate\n\n\n\n\n\nEdward Tufte\n\n\n\n\n“It is nearly always multivariate…”\n\nEdward Tufte, The Visual Display of Quantitative Information, 1983"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#truthful",
+    "href": "day_1/day_1_lecture.html#truthful",
+    "title": "Data Visualization: Day 1",
+    "section": "Truthful",
+    "text": "Truthful\n\n\n\n\n\nEdward Tufte\n\n\n\n\n“Graphical excellence requires telling the truth about the data…”\n\nEdward Tufte, The Visual Display of Quantitative Information, 1983"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#exemplar-napoleons-march",
+    "href": "day_1/day_1_lecture.html#exemplar-napoleons-march",
+    "title": "Data Visualization: Day 1",
+    "section": "Exemplar: Napoleon’s March",
+    "text": "Exemplar: Napoleon’s March\n\nCharles Minard’s Napoleon’s March"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#achieving-minards-graphical-excellence",
+    "href": "day_1/day_1_lecture.html#achieving-minards-graphical-excellence",
+    "title": "Data Visualization: Day 1",
+    "section": "Achieving Minard’s Graphical Excellence",
+    "text": "Achieving Minard’s Graphical Excellence\n\n“[Minard’s classic image] can be described and admired, but there are no compositional principles on how to create that one wonder graphic in a million.””\n\nEdward Tufte, The Visual Display of Quantitative Information, 1983"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#for-the-rest-of-us",
+    "href": "day_1/day_1_lecture.html#for-the-rest-of-us",
+    "title": "Data Visualization: Day 1",
+    "section": "For The Rest of Us",
+    "text": "For The Rest of Us\nInstead, Tufte suggests:\n\n“[For] more routine, workaday designs”\n“[Have] a properly chosen format and design”\n“Use words, numbers, and drawing together”\n“[D]isplay an accessible complexity of detail”\n“Avoid content-free decoration, including chartjunk”\n\nWe will revisit more of Tufte’s principles throughout the course."
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#required-software-for-this-course",
+    "href": "day_1/day_1_lecture.html#required-software-for-this-course",
+    "title": "Data Visualization: Day 1",
+    "section": "Required Software For This Course",
+    "text": "Required Software For This Course"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#r",
+    "href": "day_1/day_1_lecture.html#r",
+    "title": "Data Visualization: Day 1",
+    "section": "R",
+    "text": "R\n\n\n\nWe will rely mostly on R for this course\nR can be downloaded from r-project.org\n\n\n\n\n\nR Logo"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#ggplot2",
+    "href": "day_1/day_1_lecture.html#ggplot2",
+    "title": "Data Visualization: Day 1",
+    "section": "ggplot2",
+    "text": "ggplot2\n\n\n\nggplot2 is a powerful package for creating data visualizations\nIt is built on the grammar of graphics\nIt is a declarative grammar for data visualization\n\n\n\n\n\nggplot2 Logo"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#git",
+    "href": "day_1/day_1_lecture.html#git",
+    "title": "Data Visualization: Day 1",
+    "section": "git",
+    "text": "git\n\n\n\ngit is a powerful tool for version control\nIt allows you to\n\ntrack changes to your code\nrevert to previous versions of your code\ncollaborate with others on your code\nmaintain multiple branches/versions of your code\nand more\n\n\n\n\n\n\ngit Logo"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#github",
+    "href": "day_1/day_1_lecture.html#github",
+    "title": "Data Visualization: Day 1",
+    "section": "GitHub",
+    "text": "GitHub\n\n\n\ngit is not GitHub\nGitHub is a web-based platform for hosting and collaborating on code\nIt is technically a remote repository for git\nIt gives you a place to store your code and collaborate with others\nIt is free for open source projects\n\n\n\n\n\nGitHub Logo"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#scientific-notebooks",
+    "href": "day_1/day_1_lecture.html#scientific-notebooks",
+    "title": "Data Visualization: Day 1",
+    "section": "Scientific Notebooks",
+    "text": "Scientific Notebooks\n\n\n\nNotebooks are a powerful way to work with data and do data visualization\nThey allow you to embed code, text, and visualizations in a single document\nThey thus allow you to easily share both the process and the results of your work\nI do not require a specific notebook system for this course, but I will be using Quarto for examples\n\n\n\n\n\nNotebook Logo"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#notebooks-quarto",
+    "href": "day_1/day_1_lecture.html#notebooks-quarto",
+    "title": "Data Visualization: Day 1",
+    "section": "Notebooks: Quarto",
+    "text": "Notebooks: Quarto\n\n\n\nQuarto is an open source scientific and technical publishing system\nYou can create reports, websites, presentations, and books with Quarto\nThis presentation is built with Quarto\nYou can embed Python, R, and other code in in plaintext Quarto documents\nQuarto renders down to a document in HTML, PDF, or Word format\n\n\n\n\n\nQuarto Logo"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#rmarkdown",
+    "href": "day_1/day_1_lecture.html#rmarkdown",
+    "title": "Data Visualization: Day 1",
+    "section": "RMarkdown",
+    "text": "RMarkdown\n\n\n\nRMarkdown is a way to create documents that mix R code and text\nIt integrates with RStudio well and has a very similar workflow to Quarto\nRMarkdown renders down to a document in HTML, PDF, or Word format; the files them selves are plain text\nEasy to store notebooks in version control with git\n\n\n\n\n\nRMarkdown Logo"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#jupyter",
+    "href": "day_1/day_1_lecture.html#jupyter",
+    "title": "Data Visualization: Day 1",
+    "section": "Jupyter",
+    "text": "Jupyter\n\n\n\nJupyter is a notebook system popular with Python users\nJupyter stores code and results in the same document (Quarto/RMarkdown render into a separate document)\nJupyter supports R and other languages\nJupyter stores itself as JSON (javascript object notation) files and are not as easy to diff in git\n\n\n\n\n\nJupyter Logo"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#optionalpopular-software",
+    "href": "day_1/day_1_lecture.html#optionalpopular-software",
+    "title": "Data Visualization: Day 1",
+    "section": "Optional/Popular Software",
+    "text": "Optional/Popular Software"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#rstudio",
+    "href": "day_1/day_1_lecture.html#rstudio",
+    "title": "Data Visualization: Day 1",
+    "section": "RStudio",
+    "text": "RStudio\n\n\n\nRStudio is a powerful IDE for R\nIt is free and open source\nIt helps you understand what is in your environment (e.g., variables, functions, packages, etc.)\nIt also makes it easy to view your visualizations as you make them\n\n\n\n\n\nRStudio Logo"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#python",
+    "href": "day_1/day_1_lecture.html#python",
+    "title": "Data Visualization: Day 1",
+    "section": "Python",
+    "text": "Python\n\n\n\nPython is a powerful general purpose programming language that is very popular in the data science community, especially in machine learning\nIt has A-tier data management and scientific computing libraries, such as pandas and numpy\nIt has a large ecosystem of packages for data visualization, including matplotlib and seaborn\n\n\n\n\n\nPython Logo"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#llms",
+    "href": "day_1/day_1_lecture.html#llms",
+    "title": "Data Visualization: Day 1",
+    "section": "LLMs",
+    "text": "LLMs\n\n\n\nLLMs are commonly used to help with code\nCommon ones used in data science are ChatGPT, Claude, Gemini, and GitHub’s Copilot\nThey can help you write code, debug code, and write documentation\nThey can also make mistakes, so you cannot blindly trust their work\n\n\n\n\n\nGitHub Copilot Logo"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#ai-and-data-visualization",
+    "href": "day_1/day_1_lecture.html#ai-and-data-visualization",
+    "title": "Data Visualization: Day 1",
+    "section": "AI and Data Visualization",
+    "text": "AI and Data Visualization\n\nAI and LLMs are becoming more and more powerful\nThey can help you with many data-related tasks, but require care\nThey are allowed in this course, but you are responsible for checking their work"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#my-philosophy",
+    "href": "day_1/day_1_lecture.html#my-philosophy",
+    "title": "Data Visualization: Day 1",
+    "section": "My Philosophy",
+    "text": "My Philosophy\n\nI use LLMs in nearly all aspects of my work\nI have found that there is now less value in being able to “make computer do something” and more in high level concepts\nTo that extent, in this course we will try to focus a little more on concepts and less on ggplot2 syntax, since LLMs really can mostly solve technical visualization problems"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#before-we-do-actual-visualization",
+    "href": "day_1/day_1_lecture.html#before-we-do-actual-visualization",
+    "title": "Data Visualization: Day 1",
+    "section": "Before We Do Actual Visualization",
+    "text": "Before We Do Actual Visualization\n\nI am spending a lot of time on tools and organization\nThis may seem off-topic, but I assure you it is not\nEfficient workflows and reproducible work are key to success in data science"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#benefits-of-being-organized",
+    "href": "day_1/day_1_lecture.html#benefits-of-being-organized",
+    "title": "Data Visualization: Day 1",
+    "section": "Benefits Of Being Organized",
+    "text": "Benefits Of Being Organized\n\nEfficiency: Find files quickly\nReproducibility: Others can follow your work\nCollaboration: Team members understand your structure\nMaintenance: Easier to update and fix issues\nScalability: Structure grows with your project"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#naming-convention-challenges",
+    "href": "day_1/day_1_lecture.html#naming-convention-challenges",
+    "title": "Data Visualization: Day 1",
+    "section": "Naming Convention Challenges",
+    "text": "Naming Convention Challenges\n\nFiles need to be:\n\nEasy to find\nEasy to understand\nEasy to sort\nEasy to version control\n\nCommon problems:\n\nUnclear file purposes\nInconsistent naming\nMissing execution order\nLost files in nested directories\nConfusion about latest versions"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#course-naming-conventions",
+    "href": "day_1/day_1_lecture.html#course-naming-conventions",
+    "title": "Data Visualization: Day 1",
+    "section": "Course Naming Conventions",
+    "text": "Course Naming Conventions\nI recommend these conventions:\nwork/\n├── example_*         # Learning examples\n├── ps1_*             # Problem set 1\n├── ps2_*             # Problem set 2\n├── ps3_*             # Problem set 3\n├── final_project_*   # Final project\n├── shared_*          # Shared resources\n└── data/             # Data directory\n\nPrefixes indicate purpose\nNumbers show execution order\nIt is a best practice to document your structure in a README"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#real-world-flexibility",
+    "href": "day_1/day_1_lecture.html#real-world-flexibility",
+    "title": "Data Visualization: Day 1",
+    "section": "Real-World Flexibility",
+    "text": "Real-World Flexibility\n\nThese conventions are a starting point\nReal projects often need:\n\nDifferent structures for different teams\nAdaptation as projects grow\nBalance between consistency and flexibility\nDocumentation of changes"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#directory-structure-options",
+    "href": "day_1/day_1_lecture.html#directory-structure-options",
+    "title": "Data Visualization: Day 1",
+    "section": "Directory Structure Options",
+    "text": "Directory Structure Options\n\nFlat Structure:\nwork/\n├── data_prep.qmd\n├── analysis.qmd\n└── data/\nNested Structure:\nwork/\n├── data_prep/\n│   └── data_prep.qmd\n├── analysis/\n│   └── analysis.qmd\n└── data/"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#the-challenge-of-subfolders",
+    "href": "day_1/day_1_lecture.html#the-challenge-of-subfolders",
+    "title": "Data Visualization: Day 1",
+    "section": "The Challenge of Subfolders",
+    "text": "The Challenge of Subfolders\n\n\n\n\n\n\nRelative Paths are Tricky!\n\n\n\nFiles in subfolders need to reference parent directories\nPaths like ../../data/file.csv are:\n\nError-prone\nHard to maintain\nBreak when moving files\nConfusing to read"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#the-.rproj-file",
+    "href": "day_1/day_1_lecture.html#the-.rproj-file",
+    "title": "Data Visualization: Day 1",
+    "section": "The .Rproj File",
+    "text": "The .Rproj File\n\nDefines your project root\nSets the working directory\nStores project settings\nMakes paths relative to project root\nEssential for project portability"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#the-here-package",
+    "href": "day_1/day_1_lecture.html#the-here-package",
+    "title": "Data Visualization: Day 1",
+    "section": "The here Package",
+    "text": "The here Package\nlibrary(here)\n\n# Instead of \"../../data/file.csv\"\nread_csv(here(\"data\", \"file.csv\"))\n\nBuilds paths from project root\nWorks from any subfolder\nMore readable than ../\nMore maintainable"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#benefits-of-good-path-management",
+    "href": "day_1/day_1_lecture.html#benefits-of-good-path-management",
+    "title": "Data Visualization: Day 1",
+    "section": "Benefits of Good Path Management",
+    "text": "Benefits of Good Path Management\n\nPaths work from anywhere\nNo more ../ counting\nMore maintainable\nMore portable\nEasier collaboration\n\nWhen to Change Structure?\n\nAs project complexity grows\nWhen working with multiple datasets\nWhen collaborating with others\nWhen sharing code with different audiences"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#goals",
+    "href": "day_1/day_1_lecture.html#goals",
+    "title": "Data Visualization: Day 1",
+    "section": "Goals",
+    "text": "Goals\n\nLearn the data science workflow: RStudio, projects, Quarto, and git\nSet up your course workspace\nCreate your first notebook"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#forkopen-the-course-repository",
+    "href": "day_1/day_1_lecture.html#forkopen-the-course-repository",
+    "title": "Data Visualization: Day 1",
+    "section": "Fork/Open the Course Repository",
+    "text": "Fork/Open the Course Repository\n\nFork the course repo on GitHub\nIn RStudio: File -&gt; New Project -&gt; Version Control -&gt; Git\nPaste your fork URL and create"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#exploring-the-example-project",
+    "href": "day_1/day_1_lecture.html#exploring-the-example-project",
+    "title": "Data Visualization: Day 1",
+    "section": "Exploring the Example Project",
+    "text": "Exploring the Example Project\n\nOpen examples/project-example/\nNotice the structure:\n\n_quarto.yml for configuration\nNumbered notebooks\ndata/ directory\n.gitignore"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#setting-up-your-work-directory",
+    "href": "day_1/day_1_lecture.html#setting-up-your-work-directory",
+    "title": "Data Visualization: Day 1",
+    "section": "Setting Up Your Work Directory",
+    "text": "Setting Up Your Work Directory\n\nCreate new project in work/ using RStudio (File -&gt; New Project -&gt; New Directory -&gt; New Project)\nName it “data-viz-work”\nEnable git repository"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#your-work-directory",
+    "href": "day_1/day_1_lecture.html#your-work-directory",
+    "title": "Data Visualization: Day 1",
+    "section": "Your Work Directory",
+    "text": "Your Work Directory\n\n\n\n\n\n\nImportant!\n\n\nThe work/ directory is your personal workspace for everything in this course:\n\nAll homework assignments\nCourse projects\nLearning examples\nYour final project\n\nYou are responsible for:\n\nKeeping your work organized\nFollowing the naming conventions\nMaintaining a clean project structure\nDocumenting your organization in README\n\nThis is your space - keep it clean and organized!"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#configuring-your-project-12",
+    "href": "day_1/day_1_lecture.html#configuring-your-project-12",
+    "title": "Data Visualization: Day 1",
+    "section": "Configuring Your Project (1/2)",
+    "text": "Configuring Your Project (1/2)\nLet’s get a file set up to work with Quarto and have data to read from.\n\nCopy example_project_quarto.yml from examples to _quarto.yml in your new project\nCreate data/ directory"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#configuring-your-project-22",
+    "href": "day_1/day_1_lecture.html#configuring-your-project-22",
+    "title": "Data Visualization: Day 1",
+    "section": "Configuring Your Project (2/2)",
+    "text": "Configuring Your Project (2/2)\nWe are now going to create a file called .gitignore to tell git to ignore certain files.\n\nCreate a file called .gitignore (if it doesn’t already exist)"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#understanding-.gitignore",
+    "href": "day_1/day_1_lecture.html#understanding-.gitignore",
+    "title": "Data Visualization: Day 1",
+    "section": "Understanding .gitignore",
+    "text": "Understanding .gitignore\n\n\n\n\n\n\nNever Commit Sensitive Data!\n\n\n\n.gitignore tells Git which files to ignore\nCritical for:\n\nProtecting sensitive data\nPreventing accidental commits\nKeeping repositories clean"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#why-.gitignore-matters",
+    "href": "day_1/day_1_lecture.html#why-.gitignore-matters",
+    "title": "Data Visualization: Day 1",
+    "section": "Why .gitignore Matters",
+    "text": "Why .gitignore Matters\n\nData Privacy:\n\nHealth data is sensitive\nPatient information must be protected\nLegal requirements (HIPAA, etc.)\nEthical obligations\n\nRepository Health:\n\nPrevents large binary files\nAvoids temporary files\nKeeps repository size manageable\nMakes collaboration easier"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#our-.gitignore-setup",
+    "href": "day_1/day_1_lecture.html#our-.gitignore-setup",
+    "title": "Data Visualization: Day 1",
+    "section": "Our .gitignore Setup",
+    "text": "Our .gitignore Setup\n# Data directory\ndata/\n\n# R specific\n.Rproj.user\n.Rhistory\n.RData\n\ndata/: Keeps all data files local\n.Rproj.user: RStudio temporary files\n.Rhistory: Command history\n.RData: R workspace files"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#creating-your-first-notebook-12",
+    "href": "day_1/day_1_lecture.html#creating-your-first-notebook-12",
+    "title": "Data Visualization: Day 1",
+    "section": "Creating Your First Notebook (1/2)",
+    "text": "Creating Your First Notebook (1/2)\nIn RStudio:\n\nClick File -&gt; New File -&gt; Quarto Document\nIn the dialog:\n\nTitle: “Data Preparation Example”\nAuthor: Your Name\nFormat: HTML\nTemplate: Default\n\nClick “Create”\nSave as example_data_prep.qmd in your work/ directory"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#notebook-setup-23",
+    "href": "day_1/day_1_lecture.html#notebook-setup-23",
+    "title": "Data Visualization: Day 1",
+    "section": "Notebook Setup (2/3)",
+    "text": "Notebook Setup (2/3)\nIn RStudio:\n\nThe YAML header will be automatically created at the top of your file\nIt will look like this:\n\n---\ntitle: \"Data Preparation Example\"\nauthor: \"Your Name\"\ndate: \"`r format(Sys.Date(), '%Y-%m-%d')`\"\nformat: html\n---"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#data-preparation",
+    "href": "day_1/day_1_lecture.html#data-preparation",
+    "title": "Data Visualization: Day 1",
+    "section": "Data Preparation",
+    "text": "Data Preparation\nLet’s create the data preparation setup file.\nInclude this as a setup block:\n```{r setup-prep}\n#| echo: false\nlibrary(dplyr)\nlibrary(readr)\n```\nAnd then this to load and prepare the data:\n```{r load-data}\n# Load and prepare data\nmtcars_clean &lt;- mtcars |&gt;\n  mutate(\n    car_name = rownames(mtcars),\n    efficiency = mpg / wt\n  )\n\n# Save processed data\nwrite_csv(mtcars_clean, \"data/mtcars_clean.csv\")\n```"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#render-the-file-44",
+    "href": "day_1/day_1_lecture.html#render-the-file-44",
+    "title": "Data Visualization: Day 1",
+    "section": "Render the File (4/4)",
+    "text": "Render the File (4/4)\n\nKnit the file to see the results\nWe will get two outputs:\n\nA rendered HTML file\nA data file stored in the data/ directory"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#creating-analysis-notebook-33",
+    "href": "day_1/day_1_lecture.html#creating-analysis-notebook-33",
+    "title": "Data Visualization: Day 1",
+    "section": "Creating Analysis Notebook (3/3)",
+    "text": "Creating Analysis Notebook (3/3)\nIn RStudio:\n\nClick File -&gt; New File -&gt; Quarto Document\nIn the dialog:\n\nTitle: “Data Analysis Example”\nAuthor: Your Name\nFormat: HTML\nTemplate: Default\n\nClick “Create”\nSave as example_analysis.qmd in your work/ directory"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#data-analysis",
+    "href": "day_1/day_1_lecture.html#data-analysis",
+    "title": "Data Visualization: Day 1",
+    "section": "Data Analysis",
+    "text": "Data Analysis\n```{r setup-analysis}\n#| echo: false\nlibrary(dplyr)\nlibrary(ggplot2)\n```\n```{r load-processed}\n# Load processed data\nmtcars_clean &lt;- read_csv(\"data/mtcars_clean.csv\")\n```\nWe’re going to pause here, and make sure we can commit our code to GitHub. We’ll come back later and make a few basic plots."
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#version-control-setup-12",
+    "href": "day_1/day_1_lecture.html#version-control-setup-12",
+    "title": "Data Visualization: Day 1",
+    "section": "Version Control Setup (1/2)",
+    "text": "Version Control Setup (1/2)\n\nCreate new repository on GitHub:\n\nGo to github.com\nClick “New repository”\nName it “data-viz-work”\nDon’t initialize with README\n\nIn the terminal tab in RStudio, run the following commands:\ngit remote add origin https://github.com/YOUR-USERNAME/data-viz-work.git\ngit branch -M main"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#version-control-setup-22",
+    "href": "day_1/day_1_lecture.html#version-control-setup-22",
+    "title": "Data Visualization: Day 1",
+    "section": "Version Control Setup (2/2)",
+    "text": "Version Control Setup (2/2)\n\nFirst commit and push:\ngit add .\ngit commit -m \"Initial project setup\"\ngit push -u origin main"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#version-control-workflow",
+    "href": "day_1/day_1_lecture.html#version-control-workflow",
+    "title": "Data Visualization: Day 1",
+    "section": "Version Control Workflow",
+    "text": "Version Control Workflow\nFor future changes: 1. Stage changes: git add . 2. Commit: git commit -m \"Description of changes\" 3. Push: git push"
+  },
+  {
+    "objectID": "day_1/day_1_lecture.html#next-steps",
+    "href": "day_1/day_1_lecture.html#next-steps",
+    "title": "Data Visualization: Day 1",
+    "section": "Next Steps",
+    "text": "Next Steps\n\nYour workspace is ready in work/\nYou can pull course updates\nYour work is version controlled"
+  }
+]

@@ -1,0 +1,22 @@
+project:
+  type: website
+
+format:
+  revealjs:
+    theme: simple
+    css: styles.css
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+    incremental: false
+    fig-width: 8
+    fig-height: 5
+
+execute:
+  echo: true
+  warning: false
+  engine: knitr
+  freeze: auto
+
+editor:
+  render-on-save: true 

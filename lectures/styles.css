@@ -29,6 +29,26 @@
   --background-alt: var(--gray-1);
 }
 
+/* Slide content adjustments */
+.reveal .slides section {
+  font-size: 0.9em;
+}
+
+.reveal .slides section h2 {
+  font-size: 1.4em;
+  margin-bottom: 0.5em !important;
+}
+
+.reveal .slides section ul,
+.reveal .slides section ol {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.reveal .slides section li {
+  margin-bottom: 0.3em;
+}
+
 /* Captions */
 p.caption,
 figcaption {
@@ -58,7 +78,6 @@ blockquote + * > * > em {
   margin-top: 0.2em;
   font-style: normal;
 }
-
 
 h2 {
   margin-bottom: 0.75em !important;
