@@ -1,0 +1,46 @@
+---
+title: "Data Visualization: Day 2"
+author: "Erik Westlund"
+date: "2025-06-03"
+date-modified: "`r format(Sys.Date(), '%Y-%m-%d')`"
+---
+
+# Day 2: Data Preparation and Grammar of Graphics
+
+## Overview
+
+::: {.incremental}
+- Data preparation fundamentals
+- Introduction to the grammar of graphics
+- Basic plot types and their use cases
+- Data transformation for visualization
+:::
+
+## Data Preparation
+
+* Cleaning and transforming data
+* Handling missing values
+* Data types and their impact on visualization
+* Best practices for data preparation
+
+## Grammar of Graphics
+
+* Understanding the components
+* Mapping data to visual elements
+* Scales and coordinate systems
+* Faceting and grouping
+
+## Basic Plot Types
+
+* Scatter plots
+* Line plots
+* Bar charts
+* Histograms
+* Box plots
+
+## Data Transformation
+
+* Aggregation
+* Reshaping
+* Filtering
+* Creating derived variables 

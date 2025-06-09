@@ -361,6 +361,18 @@ We will revisit more of Tufte's principles throughout the course.
 * To that extent, in this course we will try to focus a little more on concepts and less on `ggplot2` syntax, since LLMs really can mostly solve technical visualization problems
 
 
+# Prerequisites for Today
+
+## Tools To Install
+
+* R: Install at [r-project.org](https://www.r-project.org/)
+* RStudio: Install at [rstudio.com](https://posit.co/products/open-source/rstudio/)
+* Git: Install at [git-scm.com](https://git-scm.com/)
+
+## Accounts To Create
+
+* GitHub: Create an account at [github.com](https://github.com/)
+
 # Project Organization & Tooling
 
 ## Before We Do Actual Visualization

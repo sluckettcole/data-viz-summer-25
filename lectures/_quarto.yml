@@ -1,5 +1,8 @@
 project:
   type: website
+  preview:
+    watch-inputs: true
+    browser: false
 
 format:
   revealjs:
