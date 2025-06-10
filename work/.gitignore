@@ -1,0 +1,6 @@
+work/data/*
+
+work/.Rproj.user/
+work/.Rhistory
+work/.RData
+/.quarto/
