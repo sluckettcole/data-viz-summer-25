@@ -1,7 +1,7 @@
 ---
 title: "Data Visualization: Day 1"
 author: "Erik Westlund"
-date: "2025-06-02"
+date: "2025-06-10"
 date-modified: "`r format(Sys.Date(), '%Y-%m-%d')`"
 ---
 
@@ -571,7 +571,7 @@ This is your space - keep it clean and organized!
 
 Let's get a file set up to work with Quarto and have data to read from.
 
-1. Copy `example_project_quarto.yml` from `examples` to `_quarto.yml` in your new project
+1. Copy `_quarto.yml` from `examples` to `_quarto.yml` in your new project
 2. Create `data/` directory
 
 ## Configuring Your Project (2/2)
@@ -806,11 +806,12 @@ Choose whichever method you're most comfortable with as both accomplish the same
 
 ## Homework Assignment
 
-* Problem Set 1 is due tomorrow
-* Your job is to create a visualization of data from any data set
-* You shoudl follow the workflow you learned today
-* Give the files sensible names and commit them to GitHub
-* Problems? Email me your answers.
+* Problem Set 1 is due tomorrow; see the assignment
+* Your job is to create a bar chart, scatter plot, and histogram of data from any data set (you can use the mtcars data set if you want)
+* You should comment on what the purpose of the plot is and what it communicates (a few sentences each is fine)
+* You should follow the workflow you learned today
+* Give the files sensible names, commit them to GitHub, and email me the link to your repository
+* Problems with GitHub? Email me your answers.
 
 ## Visualization Workflow Preview
 
@@ -829,6 +830,44 @@ From here on out, it's up to you to create the code blocks, such as below:
 # Code goes here
 
 ```</code></pre>
+```
+
+
+## Histogram (Base R)
+
+* Histograms are easy to plot using base R or `ggplot2`
+* Base R:
+```{r}
+hist(df$mpg)
+```
+
+## Histogram (ggplot2)
+
+* In our course, we will focus on `ggplot2`
+* Tomorrow we will explicate the logic behind the `gg` or grammar of graphics
+
+```{r}
+ggplot(df, aes(x = mpg)) +
+  geom_histogram()
+```
+
+## Histogram (ggplot2) notes
+
+* Note how the Base R and ggplot2 versions differ: what do you notice?
+* What might we do to improve the ggplot2 version?
+* A histogram is a workhourse "utility" plot. When is it worth "polishing" it?
+
+## Histogram polishing (but only a little bit)
+
+```{r}
+ggplot(df, aes(x = mpg)) +
+  geom_histogram(binwidth = 5) +
+  theme_minimal() + 
+  labs(
+    title = "Distribution of MPG",
+    x = "MPG",
+    y = "Count"
+  )
 ```
 
 ## Bar Chart v1
@@ -966,6 +1005,8 @@ scatter_plot_v2
 
 * This is looking better
 * In a real analysis, we may want to annotate certain points or facet by some other variable
+
+
 
 ## Fancier Plotting
 

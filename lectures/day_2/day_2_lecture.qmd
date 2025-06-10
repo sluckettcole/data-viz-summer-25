@@ -5,18 +5,31 @@ date: "2025-06-03"
 date-modified: "`r format(Sys.Date(), '%Y-%m-%d')`"
 ---
 
-# Day 2: Data Preparation and Grammar of Graphics
+# Day 2: AI & LLMs, Data Preparation and Grammar of Graphics
 
-## Overview
+## Overview For Day 2
 
 ::: {.incremental}
+- AI & LLMs: An Illustration
 - Data preparation fundamentals
 - Introduction to the grammar of graphics
 - Basic plot types and their use cases
 - Data transformation for visualization
 :::
 
+## AI & LLMs: An Illustration
+
+- We'll use an LLM to help us prepare data for a visualization
+- Let's start with the mtcars data set and just chat with the bot and so how far we can get
+
 ## Data Preparation
+
+
+
+
+
+
+<!-- ## Data Preparation
 
 * Cleaning and transforming data
 * Handling missing values
@@ -43,4 +56,4 @@ date-modified: "`r format(Sys.Date(), '%Y-%m-%d')`"
 * Aggregation
 * Reshaping
 * Filtering
-* Creating derived variables 
+* Creating derived variables  -->

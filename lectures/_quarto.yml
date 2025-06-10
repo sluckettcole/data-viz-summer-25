@@ -3,7 +3,7 @@ format:
     theme: simple
     slide-number: true
     incremental: false
-    code-fold: true
+    code-fold: false
     highlight-style: github
     transition: slide
     footer: "Graduate Summer Institute of Epidemiology and Biostatistics"
@@ -11,7 +11,8 @@ format:
     self-contained: true
     css: ../styles.css
 execute:
-  echo: false
+  echo: true
+  message: true
   warning: false
 
 editor:
