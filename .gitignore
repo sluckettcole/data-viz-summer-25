@@ -105,6 +105,10 @@ lectures/**/_site/
 lectures/**/_freeze/
 
 
+# Docs
+!Syllabus.docx
+!assignments/*.docx
+
 # Slides
 !slides/*.html
 !slides/day_1.html
