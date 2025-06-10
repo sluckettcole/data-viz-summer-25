@@ -5,7 +5,7 @@ date: "2025-06-03"
 date-modified: "`r format(Sys.Date(), '%Y-%m-%d')`"
 ---
 
-# Day 2: AI & LLMs, Data Preparation and Grammar of Graphics
+# Day 2: AI & LLMs, Data Preparation, and the Grammar of Graphics
 
 ## Overview For Day 2
 
@@ -20,21 +20,90 @@ date-modified: "`r format(Sys.Date(), '%Y-%m-%d')`"
 ## AI & LLMs: An Illustration
 
 - We'll use an LLM to help us prepare data for a visualization
-- Let's start with the mtcars data set and just chat with the bot and so how far we can get
+- We'll work with the `ai_example.qmd` file in the `examples` directory
 
-## Data Preparation
+# Data Preparation
 
+## Getting Data Ready For Visualization
 
+* Before we can do any visualization, we need to load in data and prepare it
+* Take this step seriously, especially your variable names, as your code depends on it
+* Workflow options:
 
+    1. Clean up the data in a block at the top of your notebook
+    2. Separate out the data preparation from the visualization code
 
+* There are no universal answers to the best approach here; friction as you work often tells you what to do
 
+## Option 1: Clean up the data in a block at the top of your notebook
 
-<!-- ## Data Preparation
+::: {.columns}
+::: {.column width="50%"}
+#### Benefits {.panel-heading style="color: green;"}
 
-* Cleaning and transforming data
-* Handling missing values
-* Data types and their impact on visualization
-* Best practices for data preparation
+* Quick and straightforward
+* All code in one place
+* Easy for you and others to follow the workflow
+* Good for exploratory analysis
+* Minimal file management
+:::
+
+::: {.column width="50%"}
+#### Drawbacks {.panel-heading style="color: red;"}
+
+* Can become messy with large datasets
+* Expensive transformations take time to run every time you run the notebook
+* Harder to reuse code, especially in analyses with multiple steps
+* Your colleagues may not care about the data preparation
+:::
+:::
+
+## Option 2: Separate out the data preparation from the visualization code
+
+* In this approach, you prepare the data in a separate script or notebook
+* You can then load the data into your visualization notebook
+* Two options:
+
+    1. Run the data preparation script before running the visualization script
+    2. Run the data preparation script as part of the visualization script
+
+* Example of (1) above provided in our `examples/project-example` directory
+
+## Benefits/Drawbacks of separating scripts
+
+::: {.columns}
+::: {.column width="50%"}
+#### Benefits {.panel-heading style="color: green;"}
+
+* Data preparation notebook serves as documentation of your data
+* Data preparation can be reused across projects
+* Better separation of concerns
+* Often asier to maintain and update
+:::
+
+::: {.column width="50%"}
+#### Drawbacks {.panel-heading style="color: red;"}
+
+* More files to manage
+* Need to ensure data preparation is run in the right order
+* Can be overkill for simple projects
+* More complex project structure
+:::
+:::
+
+## Saving Data To Load Later
+
+* When using separate scripts, you'll often want to save a copy of your cleaned data to load later scripts/notebooks
+* A good option here is use the `saveRDS` function to save your data as an R data object
+* This has a few benefits
+
+    - RDS files maintain all R metadata
+    - You can quickly load the data into R with `readRDS`, which can save you a lot of time when working with large datasets
+    - RDS files are not easily to accidentally modify
+
+## Preparing Variables
+
+* 
 
 ## Grammar of Graphics
 
@@ -56,4 +125,4 @@ date-modified: "`r format(Sys.Date(), '%Y-%m-%d')`"
 * Aggregation
 * Reshaping
 * Filtering
-* Creating derived variables  -->
+* Creating derived variables 
