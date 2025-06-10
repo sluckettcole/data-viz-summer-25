@@ -1,0 +1,67 @@
+---
+title: "Homework Assignment 1"
+editor: visual
+format: html
+---
+
+## 
+
+```{r}
+
+#| echo: false
+#| message: false
+library(dplyr)
+library(readr)
+library(ggplot2)
+library(forcats)
+```
+
+This bar chart shows the average daily temperature for New York City for 5 months. The purpose of the plot is to see on average how hot each month can be in New York and shows that July and August are the hottest months.
+
+```{r}
+
+airquality_avg <- airquality %>%
+  group_by(Month) %>%
+  summarize(avg_temp = mean(Temp))
+
+Months <- c("May", "June", "July", "August", "September")
+
+ggplot(airquality_avg, aes(x = Month, y = avg_temp)) +
+  geom_bar(stat = "identity")+
+  labs(title = "Average Daily Temperature for May, June, July, August, \nand September in New York City" ,
+         y = "Average Temperature") +
+  scale_x_continuous(breaks = 5:9, labels = c('May', 'June', 'July', 'August', 'September')) +
+  geom_text(aes(label = round(avg_temp, 1), vjust = -1)) 
+  
+```
+
+This scatterplot shows the differences in the length and width of the petals of an iris. The purpose of this plot is to understand the size of the flowers of the different species of iris. This plot shows that the setosa has the smallest flowers and the virginica has the largest flowers.
+
+```{r}
+ggplot(iris, aes(x = Petal.Length, y = Petal.Width, color = Species)) +
+  geom_point() +
+  labs(title = "Sepal Lengths and Width of Different Iris Species")
+
+```
+
+This histogram shows the number of adults who survived from the Titanic based on their ticket class or if they were a crew member. The purpose of this plot is to see if there is a discrepancy in who survived based on ticket class. This shows that more adult crew members survived than any other class but that more adults with first class tickets survived than adults of other ticket classes.
+
+```{r}
+
+titanic_df <- as.data.frame(Titanic)
+
+Titanic_survived <- subset(titanic_df, Age == "Adult" & Survived == "Yes")
+
+Titanic_survived2 <- Titanic_survived %>%
+  tidyr::uncount(weights = Freq)
+
+Titanic_survived <- Titanic_survived %>%
+  group_by(Class) %>%
+  summarize(avg_temp = sum(Freq))
+
+
+ggplot(Titanic_survived2, aes(x = Class)) +
+  geom_histogram(stat="count") +
+  labs(title = "Adults that Survived the Titanic by Ticket Class and Crew Status",
+       y = "Count") 
+```
